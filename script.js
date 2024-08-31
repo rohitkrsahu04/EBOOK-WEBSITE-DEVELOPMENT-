@@ -1,53 +1,56 @@
-searchForm = document.querySelector('.search-form');
+// Toggle the search form
+let searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick = () =>{
+document.querySelector('#search-btn').onclick = () => {
   searchForm.classList.toggle('active');
-}
+};
 
+// Toggle the login form
 let loginForm = document.querySelector('.login-form-container');
 
-document.querySelector('#login-btn').onclick = () =>{
+document.querySelector('#login-btn').onclick = () => {
   loginForm.classList.toggle('active');
-}
+};
 
-document.querySelector('#close-login-btn').onclick = () =>{
+document.querySelector('#close-login-btn').onclick = () => {
   loginForm.classList.remove('active');
-}
+};
 
-window.onscroll = () =>{
-
+// Handle window scroll events
+window.onscroll = () => {
   searchForm.classList.remove('active');
 
-  if(window.scrollY > 80){
+  if (window.scrollY > 80) {
     document.querySelector('.header .header-2').classList.add('active');
-  }else{
+  } else {
     document.querySelector('.header .header-2').classList.remove('active');
   }
+};
 
-}
-
-window.onload = () =>{
-
-  if(window.scrollY > 80){
+// Handle window load events
+window.onload = () => {
+  if (window.scrollY > 80) {
     document.querySelector('.header .header-2').classList.add('active');
-  }else{
+  } else {
     document.querySelector('.header .header-2').classList.remove('active');
   }
 
   fadeOut();
+};
 
-}
-
-function loader(){
+// Loader function
+function loader() {
   document.querySelector('.loader-container').classList.add('active');
 }
 
-function fadeOut(){
+// Fade out loader
+function fadeOut() {
   setTimeout(loader, 4000);
 }
 
-var swiper = new Swiper(".books-slider", {
-  loop:true,
+// Initialize Swiper instances
+var booksSwiper = new Swiper(".books-slider", {
+  loop: true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -66,9 +69,9 @@ var swiper = new Swiper(".books-slider", {
   },
 });
 
-var swiper = new Swiper (".featured-slider", {
+var featuredSwiper = new Swiper(".featured-slider", {
   spaceBetween: 10,
-  loop:true,
+  loop: true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -94,9 +97,9 @@ var swiper = new Swiper (".featured-slider", {
   },
 });
 
-var swiper = new Swiper(".arrivals-slider", {
+var arrivalsSwiper = new Swiper(".arrivals-slider", {
   spaceBetween: 10,
-  loop:true,
+  loop: true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -115,10 +118,10 @@ var swiper = new Swiper(".arrivals-slider", {
   },
 });
 
-var swiper = new Swiper(".reviews-slider", {
+var reviewsSwiper = new Swiper(".reviews-slider", {
   spaceBetween: 10,
-  grabCursor:true,
-  loop:true,
+  grabCursor: true,
+  loop: true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -137,10 +140,10 @@ var swiper = new Swiper(".reviews-slider", {
   },
 });
 
-var swiper = new Swiper(".blogs-slider", {
+var blogsSwiper = new Swiper(".blogs-slider", {
   spaceBetween: 10,
-  grabCursor:true,
-  loop:true,
+  grabCursor: true,
+  loop: true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
